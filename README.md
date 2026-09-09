@@ -1,4 +1,4 @@
-# Projeto de Reconhecimento Facial com DeepFace
+# Projeto de Reconhecimento Facial com Haar Cascade e LBPH
 
 ## Descrição do Projeto
 
@@ -6,7 +6,7 @@ Este projeto está sendo desenvolvido como parte da disciplina **Álgebra Linear
 
 O trabalho consiste na construção de um sistema capaz de identificar e comparar rostos a partir de imagens, utilizando técnicas de visão computacional e aprendizado de máquina.
 
-Para isso, o grupo optou pela utilização da biblioteca **DeepFace**, que fornece modelos pré-treinados para reconhecimento facial, permitindo focar na compreensão do funcionamento do processo e sua relação com os conceitos matemáticos estudados em aula.
+Para isso, o grupo optou pela utilização da biblioteca **OpenCV**, aplicando os algoritmos **Haar Cascade** para a detecção dos rostos e o **LBPH** (*Local Binary Pattern Histogram*) para o reconhecimento. Essa abordagem baseada em visão computacional clássica permite uma compreensão clara do funcionamento do processo, lidando diretamente com matrizes, construção de vetores de características e cálculos de distâncias métricas (normas), relacionando-se perfeitamente com os conceitos matemáticos estudados em aula.
 
 Além disso, será utilizado um **dataset fornecido pelo professor**, que servirá como base para testes, validação e análise do desempenho do sistema.
 
@@ -34,9 +34,8 @@ Desenvolver um sistema capaz de:
 ## Tecnologias Utilizadas
 
 * Python
-* DeepFace
 * NumPy
-* OpenCV (para manipulação e captura de imagens)
+* OpenCV (utilizando Haar Cascade e LBPH para detecção, manipulação e reconhecimento de imagens)
 * Dataset fornecido pelo professor
 
 ---
