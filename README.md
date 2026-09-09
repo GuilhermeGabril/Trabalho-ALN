@@ -16,7 +16,7 @@ Além disso, será utilizado um **dataset fornecido pelo professor**, que servir
 
 * Guilherme Gabril
 * Sheldron Grandini
-* Geliel Pereira
+* Geliel Galhardo
 
 ---
 
