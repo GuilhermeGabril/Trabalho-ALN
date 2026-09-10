@@ -45,6 +45,7 @@ def testar_modelo():
     
     acertos = 0
     erros = 0
+    nao_detectados = 0
     resultados = []
     
     for arquivo in arquivos:
@@ -58,12 +59,31 @@ def testar_modelo():
         img = cv2.imread(caminho_imagem, cv2.IMREAD_GRAYSCALE)
         
         if img is None:
+            print(f"{arquivo} -> Nao foi possivel ler a imagem!")
+            erros += 1
+            nao_detectados += 1
+            resultados.append({
+                'arquivo': arquivo,
+                'real': pessoa_id_real,
+                'predito': None,
+                'confianca': None,
+                'resultado': 'Erro - Nao leu a imagem'
+            })
             continue
         
         rostos = face_cascade.detectMultiScale(img, scaleFactor=1.1, minNeighbors=5)
         
         if len(rostos) == 0:
-            print(f"{arquivo} -> Nenhum rosto detectado!")
+            print(f"{arquivo} -> Nenhum rosto detectado! (ERRO)")
+            erros += 1
+            nao_detectados += 1
+            resultados.append({
+                'arquivo': arquivo,
+                'real': pessoa_id_real,
+                'predito': None,
+                'confianca': None,
+                'resultado': 'Erro - Nenhum rosto detectado'
+            })
             continue
         
         (x, y, w, h) = rostos[0]
@@ -89,22 +109,33 @@ def testar_modelo():
         
         print(f"{resultado} - {arquivo} | Real: {pessoa_id_real} | Predito: {label_predito} | Conf: {confianca:.0f}")
     
+    total_testes = acertos + erros
+    
     print("\n" + "=" * 60)
     print("RESULTADOS DO TESTE")
     print("=" * 60)
     print(f"Acertos: {acertos}")
     print(f"Erros: {erros}")
-    print(f"Taxa de acerto: {acertos/(acertos+erros)*100:.1f}%")
+    print(f"  - Erros por reconhecimento incorreto: {erros - nao_detectados}")
+    print(f"  - Erros por rosto nao detectado: {nao_detectados}")
+    print(f"Taxa de acerto: {acertos/total_testes*100:.1f}%")
+    print(f"Taxa de erro: {erros/total_testes*100:.1f}%")
     
     with open("relatorio_teste.txt", "w", encoding="utf-8") as f:
         f.write("=== RELATORIO DE TESTE ===\n\n")
-        f.write(f"Total de testes: {acertos+erros}\n")
+        f.write(f"Total de testes: {total_testes}\n")
         f.write(f"Acertos: {acertos}\n")
         f.write(f"Erros: {erros}\n")
-        f.write(f"Taxa de acerto: {acertos/(acertos+erros)*100:.1f}%\n\n")
+        f.write(f"  - Erros por reconhecimento incorreto: {erros - nao_detectados}\n")
+        f.write(f"  - Erros por rosto nao detectado: {nao_detectados}\n")
+        f.write(f"Taxa de acerto: {acertos/total_testes*100:.1f}%\n")
+        f.write(f"Taxa de erro: {erros/total_testes*100:.1f}%\n\n")
         f.write("Detalhamento:\n")
         for r in resultados:
-            f.write(f"{r['resultado']} - {r['arquivo']} | Real: {r['real']} | Predito: {r['predito']} | Conf: {r['confianca']:.0f}\n")
+            if r['predito'] is None:
+                f.write(f"{r['resultado']} - {r['arquivo']} | Real: {r['real']}\n")
+            else:
+                f.write(f"{r['resultado']} - {r['arquivo']} | Real: {r['real']} | Predito: {r['predito']} | Conf: {r['confianca']:.0f}\n")
     
     print(f"\nRelatorio salvo em 'relatorio_teste.txt'")
 
