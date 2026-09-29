@@ -3,7 +3,7 @@ import os
 import numpy as np
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-TESTE_DIR = os.path.join(BASE_DIR, "recdev-master", "teste", "easy")
+TESTE_DIR = os.path.join(BASE_DIR, "recdev-master", "teste", "medium")
 XML_FILE = os.path.join(BASE_DIR, "haarcascade_frontalface_default.xml")
 MODELO_FILE = os.path.join(BASE_DIR, "modelo_lbph.yml")
 
@@ -179,7 +179,7 @@ if __name__ == "__main__":
     print("\n" + "=" * 60)
     print("SISTEMA DE RECONHECIMENTO FACIAL")
     print("=" * 60)
-    print("1 - Testar modelo com fotos novas (recdev-master/teste/easy)")
+    print("1 - Testar modelo com fotos novas (recdev-master/teste/medium)")
     print("2 - Reconhecer uma foto especifica")
     print("3 - Sair")
     

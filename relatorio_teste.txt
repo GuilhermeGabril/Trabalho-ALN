@@ -1,0 +1,60 @@
+=== RELATORIO DE TESTE ===
+
+Total de testes: 49
+Acertos: 37
+Erros: 12
+  - Erros por reconhecimento incorreto: 12
+  - Erros por rosto nao detectado: 0
+Taxa de acerto: 75.5%
+Taxa de erro: 24.5%
+
+Detalhamento:
+Acertou - 1-1.jpg | Real: 1 | Predito: 1 | Conf: 64
+Acertou - 10-1.jpg | Real: 10 | Predito: 10 | Conf: 39
+Acertou - 11-1.jpg | Real: 11 | Predito: 11 | Conf: 61
+Errou - 12-1.jpg | Real: 12 | Predito: 16 | Conf: 47
+Acertou - 13-1.jpg | Real: 13 | Predito: 13 | Conf: 40
+Acertou - 14-1.jpg | Real: 14 | Predito: 14 | Conf: 43
+Acertou - 15-1.jpg | Real: 15 | Predito: 15 | Conf: 20
+Acertou - 16-1.jpg | Real: 16 | Predito: 16 | Conf: 57
+Acertou - 17-1.jpg | Real: 17 | Predito: 17 | Conf: 46
+Errou - 18-1.jpg | Real: 18 | Predito: 7 | Conf: 56
+Acertou - 19-1.jpg | Real: 19 | Predito: 19 | Conf: 65
+Acertou - 2-1.jpg | Real: 2 | Predito: 2 | Conf: 38
+Acertou - 20-1.jpg | Real: 20 | Predito: 20 | Conf: 56
+Acertou - 21-1.jpg | Real: 21 | Predito: 21 | Conf: 38
+Acertou - 23-1.jpg | Real: 23 | Predito: 23 | Conf: 48
+Acertou - 24-1.jpg | Real: 24 | Predito: 24 | Conf: 56
+Acertou - 25-1.jpg | Real: 25 | Predito: 25 | Conf: 52
+Acertou - 26-1.jpg | Real: 26 | Predito: 26 | Conf: 48
+Errou - 27-1.jpg | Real: 27 | Predito: 48 | Conf: 52
+Acertou - 28-1.jpg | Real: 28 | Predito: 28 | Conf: 49
+Acertou - 29-1.jpg | Real: 29 | Predito: 29 | Conf: 63
+Acertou - 3-1.jpg | Real: 3 | Predito: 3 | Conf: 62
+Acertou - 30-1.jpg | Real: 30 | Predito: 30 | Conf: 33
+Acertou - 31-1.jpg | Real: 31 | Predito: 31 | Conf: 48
+Acertou - 32-1.jpg | Real: 32 | Predito: 32 | Conf: 58
+Acertou - 33-1.jpg | Real: 33 | Predito: 33 | Conf: 46
+Acertou - 34-1.jpg | Real: 34 | Predito: 34 | Conf: 55
+Errou - 35-1.jpg | Real: 35 | Predito: 7 | Conf: 50
+Acertou - 36-1.jpg | Real: 36 | Predito: 36 | Conf: 40
+Errou - 37-1.jpg | Real: 37 | Predito: 46 | Conf: 73
+Acertou - 38-1.jpg | Real: 38 | Predito: 38 | Conf: 58
+Errou - 39-1.jpg | Real: 39 | Predito: 42 | Conf: 76
+Acertou - 4-1.jpg | Real: 4 | Predito: 4 | Conf: 48
+Errou - 40-1.jpg | Real: 40 | Predito: 44 | Conf: 71
+Acertou - 41-1.jpg | Real: 41 | Predito: 41 | Conf: 42
+Acertou - 42-1.jpg | Real: 42 | Predito: 42 | Conf: 60
+Errou - 43-1.jpg | Real: 43 | Predito: 15 | Conf: 68
+Errou - 44-1.jpg | Real: 44 | Predito: 22 | Conf: 43
+Acertou - 45-1.jpg | Real: 45 | Predito: 45 | Conf: 48
+Acertou - 46-1.jpg | Real: 46 | Predito: 46 | Conf: 47
+Acertou - 47-1.jpg | Real: 47 | Predito: 47 | Conf: 31
+Acertou - 48-1.jpg | Real: 48 | Predito: 48 | Conf: 37
+Errou - 49-1.jpg | Real: 49 | Predito: 7 | Conf: 60
+Errou - 5-1.jpg | Real: 5 | Predito: 22 | Conf: 49
+Acertou - 50-1.jpg | Real: 50 | Predito: 50 | Conf: 54
+Errou - 6-1.jpg | Real: 6 | Predito: 22 | Conf: 49
+Acertou - 7-1.jpg | Real: 7 | Predito: 7 | Conf: 34
+Acertou - 8-1.jpg | Real: 8 | Predito: 8 | Conf: 53
+Acertou - 9-1.jpg | Real: 9 | Predito: 9 | Conf: 39
