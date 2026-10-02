@@ -5,6 +5,7 @@ import numpy as np
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 TREINO_DIR = os.path.join(BASE_DIR, "recdev-master", "treino", "medium")
 XML_FILE = os.path.join(BASE_DIR, "haarcascade_frontalface_default.xml")
+OUTPUT_DIR = os.path.join(BASE_DIR, "rostos-processados")
 
 face_cascade = cv2.CascadeClassifier(XML_FILE)
 
@@ -57,7 +58,20 @@ for arquivo in arquivos:
     (x, y, w, h) = rostos[0]
     rosto = img[y:y+h, x:x+w]
     rosto = cv2.resize(rosto, (200, 200))
+    # ---------------- VISUALIZAÇÃO ----------------
+    cv2.imshow(f"Rosto ID {pessoa_id}", rosto)
+    cv2.waitKey(100)  # mostra rapidamente
+
+    # ---------------- SALVAR IMAGEM ----------------
+    nome_saida = f"id_{pessoa_id}_{contagem_por_pessoa.get(pessoa_id, 0)}.jpg"
+    caminho_saida = os.path.join(OUTPUT_DIR, nome_saida)
+    cv2.imwrite(caminho_saida, rosto)
+
+    # ---------------- VETORIZAÇÃO (ALN) ----------------
+    vetor = rosto.flatten()
+    print(f"Vetor gerado para ID {pessoa_id}: dimensão {vetor.shape}")
     
+
     faces.append(rosto)
     labels.append(pessoa_id)
     
@@ -84,3 +98,5 @@ with open("mapeamento_ids.txt", "w", encoding="utf-8") as f:
 print("\nTREINAMENTO CONCLUIDO!")
 print(f"Pessoas: {len(contagem_por_pessoa)}")
 print(f"Total de rostos: {len(faces)}")
+
+cv2.destroyAllWindows()
