@@ -3,7 +3,7 @@ import os
 import numpy as np
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-TREINO_DIR = os.path.join(BASE_DIR, "recdev-master", "treino", "medium")
+TREINO_DIR = os.path.join(BASE_DIR, "recdev-master", "treino", "hard")
 XML_FILE = os.path.join(BASE_DIR, "haarcascade_frontalface_default.xml")
 OUTPUT_DIR = os.path.join(BASE_DIR, "rostos-processados")
 
