@@ -4,27 +4,13 @@
 
 Este projeto está sendo desenvolvido como parte da disciplina **Álgebra Linear Numérica**, com o objetivo de aplicar conceitos teóricos em um problema prático de reconhecimento facial.
 
-O sistema utiliza a biblioteca **OpenCV**, aplicando o algoritmo **Haar Cascade** para a detecção de rostos e o **LBPH (Local Binary Pattern Histogram)** para o reconhecimento facial.
-
-Essa abordagem permite trabalhar com matrizes, extração de características e cálculos de distâncias métricas, relacionando-se aos conceitos matemáticos estudados em aula.
-
-Será utilizado um **dataset fornecido pelo professor** para o treinamento e a avaliação do sistema.
-
----
+O sistema utiliza o **Haar Cascade** para detecção de rostos e o **LBPH (Local Binary Pattern Histogram)** para reconhecimento facial, utilizando a biblioteca OpenCV.
 
 ## Integrantes do Grupo
 
 - Guilherme Gabril
 - Sheldron Grandini
 - Geliel Galhardo
-
----
-
-## Objetivo
-
-Desenvolver um sistema capaz de detectar, reconhecer e comparar rostos, aplicando conceitos de Álgebra Linear Numérica.
-
----
 
 ## Tecnologias Utilizadas
 
@@ -34,30 +20,45 @@ Desenvolver um sistema capaz de detectar, reconhecer e comparar rostos, aplicand
 - Haar Cascade
 - LBPH
 
----
-
 ## Como Executar
 
-### 1. Instalar as Dependências
+### 1. Instalar as dependências
 
 ```bash
 pip install numpy opencv-contrib-python
 ```
 
-### 2. Treinar o Modelo
+### 2. Treinar o modelo
 
-Execute o arquivo `treinar.py` para treinar o modelo utilizando as imagens do dataset:
+Execute o comando:
 
 ```bash
 python treinar.py
 ```
 
-### 3. Testar o Modelo
+O programa utilizará as imagens de `recdev-master/treino/hard` para treinar o modelo.
 
-Após concluir o treinamento, execute o arquivo `testar.py` para realizar os testes e visualizar os resultados:
+Ao finalizar, serão gerados:
+- `modelo_lbph.yml`: modelo treinado.
+- `mapeamento_ids.txt`: quantidade de fotos utilizadas para cada pessoa.
+- Pasta `rostos-processados`: imagens dos rostos extraídos durante o treinamento.
+
+### 3. Testar o modelo
+
+Após o treinamento, execute:
 
 ```bash
 python testar.py
 ```
 
-**Importante:** execute primeiro o treinamento e depois os testes.
+No menu apresentado, escolha:
+
+- **1:** testar o modelo com as imagens de `recdev-master/teste/hard`.
+- **2:** reconhecer uma imagem específica, informando o caminho do arquivo.
+- **3:** sair do programa.
+
+Ao escolher a opção 1, o sistema apresenta os acertos, erros, taxas de acerto e erro, além da distância retornada pelo LBPH para cada imagem.
+
+Os resultados detalhados são salvos no arquivo `relatorio_teste.txt`.
+
+**Importante:** execute primeiro `treinar.py` e depois `testar.py`. O dataset e o arquivo `haarcascade_frontalface_default.xml` devem estar nos caminhos esperados pelo código.
